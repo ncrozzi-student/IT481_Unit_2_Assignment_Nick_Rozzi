@@ -53,7 +53,7 @@
             this.btnConnect.Location = new System.Drawing.Point(378, 158);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(176, 23);
-            this.btnConnect.TabIndex = 3;
+            this.btnConnect.TabIndex = 5;
             this.btnConnect.Text = "Connect";
             this.btnConnect.UseVisualStyleBackColor = true;
             this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
@@ -64,7 +64,7 @@
             this.btnQuery1.Location = new System.Drawing.Point(76, 276);
             this.btnQuery1.Name = "btnQuery1";
             this.btnQuery1.Size = new System.Drawing.Size(176, 23);
-            this.btnQuery1.TabIndex = 4;
+            this.btnQuery1.TabIndex = 6;
             this.btnQuery1.Text = "Get Customer Count";
             this.btnQuery1.UseVisualStyleBackColor = true;
             this.btnQuery1.Click += new System.EventHandler(this.btnQuery1_Click);
@@ -75,7 +75,7 @@
             this.btnQuery2.Location = new System.Drawing.Point(378, 276);
             this.btnQuery2.Name = "btnQuery2";
             this.btnQuery2.Size = new System.Drawing.Size(176, 23);
-            this.btnQuery2.TabIndex = 5;
+            this.btnQuery2.TabIndex = 7;
             this.btnQuery2.Text = "Get Customer Names";
             this.btnQuery2.UseVisualStyleBackColor = true;
             this.btnQuery2.Click += new System.EventHandler(this.btnQuery2_Click);
@@ -139,28 +139,28 @@
             this.tbUser.Location = new System.Drawing.Point(212, 38);
             this.tbUser.Name = "tbUser";
             this.tbUser.Size = new System.Drawing.Size(160, 20);
-            this.tbUser.TabIndex = 14;
+            this.tbUser.TabIndex = 1;
             // 
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(212, 78);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(160, 20);
-            this.tbPassword.TabIndex = 15;
+            this.tbPassword.TabIndex = 2;
             // 
             // tbServer
             // 
             this.tbServer.Location = new System.Drawing.Point(665, 38);
             this.tbServer.Name = "tbServer";
             this.tbServer.Size = new System.Drawing.Size(166, 20);
-            this.tbServer.TabIndex = 16;
+            this.tbServer.TabIndex = 3;
             // 
             // tbDatabase
             // 
             this.tbDatabase.Location = new System.Drawing.Point(665, 78);
             this.tbDatabase.Name = "tbDatabase";
             this.tbDatabase.Size = new System.Drawing.Size(166, 20);
-            this.tbDatabase.TabIndex = 17;
+            this.tbDatabase.TabIndex = 4;
             // 
             // btnQuery3
             // 
@@ -168,7 +168,7 @@
             this.btnQuery3.Location = new System.Drawing.Point(665, 276);
             this.btnQuery3.Name = "btnQuery3";
             this.btnQuery3.Size = new System.Drawing.Size(176, 23);
-            this.btnQuery3.TabIndex = 18;
+            this.btnQuery3.TabIndex = 8;
             this.btnQuery3.Text = "Get Order Count";
             this.btnQuery3.UseVisualStyleBackColor = true;
             this.btnQuery3.Click += new System.EventHandler(this.btnQuery3_Click);
@@ -179,7 +179,7 @@
             this.btnQuery4.Location = new System.Drawing.Point(76, 443);
             this.btnQuery4.Name = "btnQuery4";
             this.btnQuery4.Size = new System.Drawing.Size(176, 23);
-            this.btnQuery4.TabIndex = 19;
+            this.btnQuery4.TabIndex = 9;
             this.btnQuery4.Text = "Get Order Ship Names";
             this.btnQuery4.UseVisualStyleBackColor = true;
             this.btnQuery4.Click += new System.EventHandler(this.btnQuery4_Click);
@@ -190,7 +190,7 @@
             this.btnQuery5.Location = new System.Drawing.Point(378, 443);
             this.btnQuery5.Name = "btnQuery5";
             this.btnQuery5.Size = new System.Drawing.Size(176, 23);
-            this.btnQuery5.TabIndex = 20;
+            this.btnQuery5.TabIndex = 10;
             this.btnQuery5.Text = "Get Employee Count";
             this.btnQuery5.UseVisualStyleBackColor = true;
             this.btnQuery5.Click += new System.EventHandler(this.btnQuery5_Click);
@@ -201,7 +201,7 @@
             this.btnQuery6.Location = new System.Drawing.Point(665, 443);
             this.btnQuery6.Name = "btnQuery6";
             this.btnQuery6.Size = new System.Drawing.Size(176, 23);
-            this.btnQuery6.TabIndex = 21;
+            this.btnQuery6.TabIndex = 11;
             this.btnQuery6.Text = "Get Employee Names";
             this.btnQuery6.UseVisualStyleBackColor = true;
             this.btnQuery6.Click += new System.EventHandler(this.btnQuery6_Click);

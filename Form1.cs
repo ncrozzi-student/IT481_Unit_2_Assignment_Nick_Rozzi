@@ -35,45 +35,93 @@ namespace IT481_Unit_3_Assignment_Nick_Rozzi
 
             if (isValid)
             {
-                controller = new Controller("Server = localhost\\SQLEXPRESS; Trusted_Connection=true; Database=northwind; User Instance=false; TrustServerCertificate=True; Connection timeout=30;");
+                controller = new Controller("Server = " + server + "\\SQLEXPRESS;" +
+                                            "Database= " + database + ";" +
+                                            "User Id = " + user + ";" +
+                                            "Password = " + password + ";" +
+                                            "TrustServerCertificate=True;" +
+                                            "Connection timeout=30;");
+
                 MessageBox.Show("Connection information sent");
             }
         }
 
         private void btnQuery1_Click(object sender, EventArgs e)
         {
-            string count = controller.getCustomerCount();
-            MessageBox.Show(count, "Customer Count");
+            try
+            {
+                string count = controller.getCustomerCount();
+                MessageBox.Show(count, "Customer Count");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void btnQuery2_Click(object sender, EventArgs e)
         {
-            string names = controller.getCompanyNames();
-            MessageBox.Show(names, "Customer Names");
+            try
+            {
+                string names = controller.getCompanyNames();
+                MessageBox.Show(names, "Customer Names");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void btnQuery3_Click(object sender, EventArgs e)
         {
-            string count = controller.getOrderCount();
-            MessageBox.Show(count, "Order Count");
+            try
+            {
+                string count = controller.getOrderCount();
+                MessageBox.Show(count, "Order Count");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void btnQuery4_Click(object sender, EventArgs e)
         {
-            string names = controller.getShipNames();
-            MessageBox.Show(names, "Order Ship Names");
+            try
+            {
+                string names = controller.getShipNames();
+                MessageBox.Show(names, "Order Ship Names");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void btnQuery5_Click(object sender, EventArgs e)
         {
-            string count = controller.getEmployeeCount();
-            MessageBox.Show(count, "Employee Count");
+            try
+            {
+                string count = controller.getEmployeeCount();
+                MessageBox.Show(count, "Employee Count");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
 
         private void btnQuery6_Click(object sender, EventArgs e)
         {
-            string names = controller.getEmployeeNames();
-            MessageBox.Show(names, "Employee Names");
+            try
+            {
+                string names = controller.getEmployeeNames();
+                MessageBox.Show(names, "Employee Names");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+            }
         }
     }
 
@@ -103,14 +151,8 @@ namespace IT481_Unit_3_Assignment_Nick_Rozzi
 
                 if (connection.State == ConnectionState.Closed) connection.Open();
 
-                try
-                {
-                    count = Convert.ToInt32(command.ExecuteScalar());
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                count = Convert.ToInt32(command.ExecuteScalar());
+
             }
             return count.ToString();
         }
@@ -125,26 +167,19 @@ namespace IT481_Unit_3_Assignment_Nick_Rozzi
 
                 if (connection.State == ConnectionState.Closed) connection.Open();
 
-                try
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.HasRows)
                     {
-                        if (reader.HasRows)
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                names += reader[0].ToString() + "\n";
-                            }
-                        }
-                        else
-                        {
-                            names = "None";
+                            names += reader[0].ToString() + "\n";
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
+                    else
+                    {
+                        names = "None";
+                    }
                 }
             }
             return names;
@@ -161,14 +196,7 @@ namespace IT481_Unit_3_Assignment_Nick_Rozzi
 
                 if (connection.State == ConnectionState.Closed) connection.Open();
 
-                try
-                {
-                    count = Convert.ToInt32(command.ExecuteScalar());
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                count = Convert.ToInt32(command.ExecuteScalar());
             }
             return count.ToString();
         }
@@ -183,26 +211,19 @@ namespace IT481_Unit_3_Assignment_Nick_Rozzi
 
                 if (connection.State == ConnectionState.Closed) connection.Open();
 
-                try
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.HasRows)
                     {
-                        if (reader.HasRows)
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                names += reader[0].ToString() + "\n";
-                            }
-                        }
-                        else
-                        {
-                            names = "None";
+                            names += reader[0].ToString() + "\n";
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
+                    else
+                    {
+                        names = "None";
+                    }
                 }
             }
             return names;
@@ -219,14 +240,7 @@ namespace IT481_Unit_3_Assignment_Nick_Rozzi
 
                 if (connection.State == ConnectionState.Closed) connection.Open();
 
-                try
-                {
-                    count = Convert.ToInt32(command.ExecuteScalar());
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                count = Convert.ToInt32(command.ExecuteScalar());
             }
             return count.ToString();
         }
@@ -241,26 +255,19 @@ namespace IT481_Unit_3_Assignment_Nick_Rozzi
 
                 if (connection.State == ConnectionState.Closed) connection.Open();
 
-                try
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    if (reader.HasRows)
                     {
-                        if (reader.HasRows)
+                        while (reader.Read())
                         {
-                            while (reader.Read())
-                            {
-                                names += reader[0].ToString() + "\n";
-                            }
-                        }
-                        else
-                        {
-                            names = "None";
+                            names += reader[0].ToString() + "\n";
                         }
                     }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
+                    else
+                    {
+                        names = "None";
+                    }
                 }
             }
             return names;
