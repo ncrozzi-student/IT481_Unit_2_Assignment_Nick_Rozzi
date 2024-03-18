@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IT481_Unit_2_Assignment_Nick_Rozzi
+namespace IT481_Unit_3_Assignment_Nick_Rozzi
 {
     internal static class Program
     {
